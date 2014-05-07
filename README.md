@@ -17,8 +17,8 @@ Optional arguments:
 <b>showLessCallback</b>: callback when the show less is triggered. <i>default is $noop</i>
 
 example:
-$('.pfSummary').pfsummarize({ maxLength: 300, moreText: "read more", lessTest: "read less", showMoreCallback: function() {
-    //do something when we show more
+$('.pfSummary').pfsummarize({ maxLength: 300, moreText: "read more", lessTest: "read less", showMoreCallback: function(original, clone) {
+    //do something
   }
 })
 
