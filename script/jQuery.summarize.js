@@ -61,15 +61,15 @@
             };
 
             function showMore($this, $clone) {
-                $this.hide();
-                $clone.show();
-                options.showMoreCallback();
+                $this.show();
+                $clone.hide();
+                options.showMoreCallback($this);
             }
 
             function showLess($this, $clone) {
-                $this.show();
-                $clone.hide();
-                options.showLessCallback();
+                $this.hide();
+                $clone.show();
+                options.showLessCallback($this);
             }
 
             return this.each(function() {
@@ -92,22 +92,12 @@
                     .append(nodes)
                     .addClass('pf-summarize')
                     .append($("<a href='javascript:;' class='pf-show-more'>" + options.moreText + "</a>").on('click.pfsummarize', function(event) {
-                        if ($this.is('.visible')) {
-                            showMore($this, $clone);
-                        }
-                        else {
-                            showLess($this, $clone);
-                        }
+                        showMore($this, $clone);
                     }))
                     .insertAfter($this);
 
                 $this.append($("<a href='javascript:;' class='pf-show-less'>" + options.lessText + "</a>").on('click.pfsummarize', function(event) {
-                    if ($this.is('.visible')) {
-                        showLess($this, $clone);
-                    }
-                    else {
-                        showMore($this, $clone);
-                    }
+                     showLess($this, $clone);
                 }));
 
                 //bindings to control show more and less
