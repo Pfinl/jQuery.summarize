@@ -63,13 +63,13 @@
             function showMore($this, $clone) {
                 $this.show();
                 $clone.hide();
-                options.showMoreCallback($this);
+                options.showMoreCallback($this, $clone);
             }
 
             function showLess($this, $clone) {
                 $this.hide();
                 $clone.show();
-                options.showLessCallback($this);
+                options.showLessCallback($this, $clone);
             }
 
             return this.each(function() {
