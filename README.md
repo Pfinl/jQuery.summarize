@@ -25,3 +25,5 @@ $('.pfSummary').pfsummarize({ maxLength: 300, moreText: "read more", lessTest: "
 
 $('.pfSummary').pfsummarize("destroy"); will revert the content back to it's original state.
 
+
+See a working example here: http://jsfiddle.net/YMuNV/3/
