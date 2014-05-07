@@ -1,0 +1,34 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>Summarize Test</title>
+</head>
+<body>
+    <div class="pfSummary"><a href="http://www.google.com">Google</a><div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque non malesuada diam, a bibendum risus. Aenean eget pretium felis. Nam sit amet dui aliquet, lacinia urna sit amet, fermentum nisl. Vivamus pulvinar tristique risus vitae malesuada. Mauris quis justo sapien. Integer molestie convallis lorem. Nam ultrices convallis auctor. Phasellus placerat, nunc a accumsan venenatis, magna est adipiscing nisl, tempor convallis orci augue ac magna. Praesent a ipsum vitae magna molestie semper sit amet sed neque. Mauris sed iaculis massa.</div></div>
+    <div class="pfSummary"><div><span>Cras elit est, pellentesque hendrerit aliquam sed, </span><a href="https://github.com">git hub</a>fermentum et diam. Fusce placerat laoreet ligula vitae fermentum. Mauris a erat nec turpis hendrerit viverra vel non magna. Maecenas ultrices pharetra quam, sit amet iaculis est porta vel. Aliquam consequat vel quam vel accumsan. Duis et leo ac leo pretium pellentesque. Sed massa diam, volutpat posuere sapien sed, lobortis iaculis justo. Integer ut malesuada purus. Aliquam pretium tempus semper. Aenean auctor dui neque, eu sagittis ante pellentesque sed. Mauris vitae imperdiet neque. Mauris sodales velit magna, congue convallis nisl volutpat id. Nulla interdum lacus id imperdiet ornare.</div></div>
+    <div class="pfSummary"><div>Nam vehicula, purus ac ultricies vehicula, magna urna pretium leo, sit amet dignissim neque libero a eros. Praesent laoreet volutpat est, vitae aliquam justo suscipit hendrerit. Vestibulum aliquam velit at fermentum egestas. In imperdiet congue aliquet. Nullam nec auctor turpis, sit amet interdum sapien. Integer aliquam pharetra mollis. Morbi et consectetur velit, at pellentesque mi. Nunc adipiscing, libero nec molestie tempor, ante tellus sollicitudin purus, a vestibulum turpis lectus id turpis. Vestibulum in tincidunt risus. Duis fringilla metus ut nunc fringilla, quis volutpat massa eleifend. Sed sollicitudin nibh a quam scelerisque, et venenatis massa malesuada. Pellentesque semper vehicula posuere. Phasellus suscipit velit et luctus luctus. Maecenas iaculis ligula sed justo consequat fermentum.</div></div>
+    
+    <div>
+        Max length: <input id="pfSummarizeLength" type="number" value="250" /><br />
+        Show More text: <input id="pfSummarizeMoreText" type="text" value="show more" /><br />
+        Show Less text: <input id="pfSummarizeLessText" type="text" value="show less" /><br />
+        <button type="button" id="pfSummarizeIt">Summarize</button>&nbsp;<button type="button" id="pfDestroyIt">Destroy</button>
+    </div>
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script type="text/javascript" src="script/jQuery.summarize.js"></script>
+    
+    <script type="text/javascript">
+        summarizeIt();
+        $('#pfDestroyIt').on('click', function() {
+            $('.pfSummary').pfsummarize('destroy');
+        });
+        $('#pfSummarizeIt').on('click', summarizeIt);
+        function summarizeIt() {
+            $('.pfSummary').pfsummarize({ maxLength: parseInt($('#pfSummarizeLength').val()),
+                moreText: $('#pfSummarizeMoreText').val(),
+                lessText: $('#pfSummarizeLessText').val() 
+                });
+        }
+    </script>
+</body>
+</html>
