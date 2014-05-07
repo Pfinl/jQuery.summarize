@@ -1,5 +1,10 @@
-/*
-Summarizes text nodes without breaking html
+/*!
+* jQuery Summarize Plugin v1.0
+* Summarizes text nodes without breaking html
+* https://github.com/Pfinl/jQuery.summarize
+*
+* Copyright 2014 Sherstin Lauman
+* Released under the MIT license
 */
 "use strict";
 ; (function($, window, document, undefined) {
