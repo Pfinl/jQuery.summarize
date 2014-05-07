@@ -24,7 +24,7 @@
         });
         $('#pfSummarizeIt').on('click', summarizeIt);
         function summarizeIt() {
-            $('.pfSummary').pfsummarize({ maxLength: parseInt($('#pfSummarizeLength').val()),
+            $('.pfSummary').pfsummarize('destroy').pfsummarize({ maxLength: parseInt($('#pfSummarizeLength').val()),
                 moreText: $('#pfSummarizeMoreText').val(),
                 lessText: $('#pfSummarizeLessText').val() 
                 });
