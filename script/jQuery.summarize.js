@@ -73,7 +73,7 @@
             }
 
             return this.each(function() {
-                var $this = $(this);
+                var $this = $(this), $wrapper, nodes, $clone;
 
                 //if it's been summarized once, don't do it again.
                 if ($this.closest('.pf-summarize-wrapper').length) {
@@ -82,11 +82,11 @@
                 }
 
 
-                var $wrapper = $('<div class="pf-summarize-wrapper" style="display:inline;"/>');
+                $wrapper = $('<div class="pf-summarize-wrapper" style="display:inline;"/>');
                 $this.wrap($wrapper);
 
-                var nodes = splitNodes(this); //split the nodes and get back the summarized version
-                var $clone = $this.clone(); //clone it
+                nodes = splitNodes(this); //split the nodes and get back the summarized version
+                $clone = $this.clone(); //clone it
                 $this.hide(); //keep original, but hide it
                 $clone.empty()
                     .append(nodes)
@@ -114,8 +114,8 @@
 
         destroy: function() {
             return this.each(function() {
-                var $this = $(this);
-                var $wrapper = $this.closest('.pf-summarize-wrapper');
+                var $this = $(this),
+                    $wrapper = $this.closest('.pf-summarize-wrapper');
                 if ($wrapper.length) {
                     $this.insertBefore($wrapper).show()
                         .find('.pf-show-less').remove();
